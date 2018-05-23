@@ -1,0 +1,15 @@
+.titleHomepage {
+    float: left;
+}
+
+.imageMendozaGobierno {
+    width: 400px;
+    height: 120px;
+}
+
+.navButton {
+    padding: 15px 30px;
+    background-color: #7e297a;
+    border: none;
+    color: white;
+}

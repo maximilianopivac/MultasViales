@@ -1,0 +1,24 @@
+<h1><strong>Infracciones - Ley 9024</strong></h1>
+
+{}
+
+<div class="content">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>Detalle</th>
+                <th>Monto Total</th>
+                <th>Monto Con Descuento</th>>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let infraccion of infServ.itemList">
+                <td>{{infraccion.ifrid}}</td>
+                <td>{{infraccion.ifrds}}</td>
+                <td>$ {{(infraccion.ifrcosto*9.5)}}</td>
+                <td>$ {{((infraccion.ifrcosto*9.5)*0.6)}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
