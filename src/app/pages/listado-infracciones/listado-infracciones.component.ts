@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { InfraccionesService } from '../../services/infracciones.service';
-import { }
 
 @Component({
   selector: 'app-listado-infracciones',
@@ -9,10 +8,15 @@ import { }
 })
 export class ListadoInfraccionesComponent implements OnInit {
 
+  @Input()
+  searchInput: string;
+
   constructor(public infServ: InfraccionesService) { }
 
   ngOnInit() {
     this.infServ.findInfractions();
   }
+
+
 
 }
