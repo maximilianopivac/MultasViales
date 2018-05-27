@@ -14,8 +14,8 @@ export class ConsultarDominioComponent {
 
     }
 
-    getVehiculo(inputValue) {
-        alert('abc was called ' + inputValue.value);
+    print() {
+        alert('abc was called ');
     }
 
 
