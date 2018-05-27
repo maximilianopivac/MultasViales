@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Router } from '@angular/router';
 import { APP_ROUTING } from './router';
 import { ErrorComponent } from './pages/error-page/error.page.component';
+import { ConsultarDominioComponent } from './pages/consultar-dominio/consultar-dominio.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ErrorComponent } from './pages/error-page/error.page.component';
     HomeComponent,
     ListadoInfraccionesComponent,
     NavbarComponent,
-    ErrorComponent
+    ErrorComponent,
+    ConsultarDominioComponent
   ],
   imports: [
     BrowserModule,
