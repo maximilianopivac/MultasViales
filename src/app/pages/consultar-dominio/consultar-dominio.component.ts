@@ -1,5 +1,6 @@
 import { Component, Input, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { VehiculosService } from '../../services/vehiculos.service';
 
 @Component ({
     selector: 'app-consultar-dominio',
@@ -8,15 +9,12 @@ import { FormsModule } from '@angular/forms';
 
 export class ConsultarDominioComponent {
 
-    public documento = 'Test';
+    public documento: string;
 
-    constructor() {
+    constructor(public vehicServicio: VehiculosService) { }
 
+    getVehiculo() {
+        this.vehicServicio.getVehiculos(this.documento);
     }
-
-    print() {
-        alert('abc was called ');
-    }
-
 
 }

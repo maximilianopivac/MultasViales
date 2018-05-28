@@ -11,6 +11,7 @@ import { RouterModule, Router } from '@angular/router';
 import { APP_ROUTING } from './router';
 import { ErrorComponent } from './pages/error-page/error.page.component';
 import { ConsultarDominioComponent } from './pages/consultar-dominio/consultar-dominio.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ConsultarDominioComponent } from './pages/consultar-dominio/consultar-d
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     APP_ROUTING
   ],

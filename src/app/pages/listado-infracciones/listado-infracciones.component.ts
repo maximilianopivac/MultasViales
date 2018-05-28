@@ -8,15 +8,9 @@ import { InfraccionesService } from '../../services/infracciones.service';
 })
 export class ListadoInfraccionesComponent implements OnInit {
 
-  @Input()
-  searchInput: string;
-
   constructor(public infServ: InfraccionesService) { }
 
   ngOnInit() {
     this.infServ.findInfractions();
   }
-
-
-
 }

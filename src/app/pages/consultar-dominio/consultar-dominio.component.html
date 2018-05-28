@@ -1,4 +1,29 @@
-<div ng-app="myApp" ng-controller="documentoController">
-    <input type="text" ng-model="numeroDoc">
-    <button (click)="print()">Mostrar documento</button>
+<h3 style="margin-left: 10px">Consultar Titularidad de Vehiculos: </h3>
+<br/>
+<div>
+    <input style="margin-left: 10px" placeholder="Ingresar DNI" type="text" [(ngModel)]="documento"> &nbsp;
+    <button (click)="getVehiculo()">Mostrar Vehiculos</button>
 </div>
+
+
+<br/>
+
+<br/>
+<table style="margin: 0px 10px" class="table">
+    <thead>
+        <tr>
+            <th>Dominio</th>
+            <th>Marca</th>
+            <th>Titular</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let datosVehiculo of vehicServicio.searchResult">
+            <td>
+                <a href="/home">{{ datosVehiculo.dominio }}</a>
+            </td>
+            <td>{{ datosVehiculo.marca }}</td>
+            <td>{{ datosVehiculo.nombre }}</td>
+        </tr>
+    </tbody>
+</table>
