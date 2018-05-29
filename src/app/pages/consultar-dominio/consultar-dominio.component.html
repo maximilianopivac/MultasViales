@@ -19,9 +19,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let datosVehiculo of vehicServicio.searchResult">
-            <td>
-                <a href="/home">{{ datosVehiculo.dominio }}</a>
-            </td>
+            <td>{{ datosVehiculo.dominio }}</td>
             <td>{{ datosVehiculo.marca }}</td>
             <td>{{ datosVehiculo.nombre }}</td>
         </tr>
