@@ -8,9 +8,22 @@ import { InfraccionesService } from '../../services/infracciones.service';
 })
 export class ListadoInfraccionesComponent implements OnInit {
 
+  public infraccionSearch: string;
+
   constructor(public infServ: InfraccionesService) { }
 
   ngOnInit() {
     this.infServ.findInfractions();
+  }
+
+  buscarInfraccion(infraccionSearch) {
+    if (infraccionSearch === '') {
+      this.ngOnInit();
+    } else {
+      this.infServ.buscarInfraccion(infraccionSearch);
+    }
+    /*while (infraccionSearch !== '') {
+      this.infServ.buscarInfraccion(infraccionSearch);
+    }*/
   }
 }

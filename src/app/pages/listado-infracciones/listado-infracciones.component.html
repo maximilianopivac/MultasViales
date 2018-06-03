@@ -1,5 +1,6 @@
 <h1><strong>Infracciones - Ley 9024</strong></h1>
-<br/> Ingresar infracciones: <input style="margin-left: 10px" placeholder="Buscar infracción">
+<br/> Ingresar infracciones:
+<input style="margin-left: 10px" placeholder="Buscar infracción" [(ngModel)]="infraccionSearch" (ngModelChange)="buscarInfraccion(infraccionSearch)">
 <br/>
 <br/>
 <div class="content">

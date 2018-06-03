@@ -8,6 +8,7 @@ import { getQueryValue } from '@angular/core/src/view/query';
 export class InfraccionesService {
 
   url = 'https://sistemas.seguridad.mendoza.gov.ar/apex/vial/multasvialesinfracciones/';
+  urlInfraccionSearch = 'https://sistemas.seguridad.mendoza.gov.ar/apex/vial/multasvialesinfracciones/search=';
   itemList: detalleInfraccionesInterface[];
 
   constructor(private httpClient: HttpClient) {
@@ -17,7 +18,12 @@ export class InfraccionesService {
     this.httpClient.get<respInterface>(this.url).subscribe(dataList => {
       this.itemList = dataList.items;
     });
-    console.log(this.itemList);
+  }
+
+  buscarInfraccion(infraccionSearch) {
+    this.httpClient.get<respInterface>(this.urlInfraccionSearch + infraccionSearch).subscribe(infraccionList => {
+      this.itemList = infraccionList.items;
+    });
   }
 }
 // tslint:disable-next-line:class-name
