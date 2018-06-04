@@ -1,0 +1,15 @@
+.banner-contacto {
+    height: 215px;
+    width: 22%;
+    background-color: #7e297a;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.medios-pago {
+    margin-left: 10px;
+    width: 275px;
+    height: 75px;
+}

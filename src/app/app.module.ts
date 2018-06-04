@@ -12,6 +12,7 @@ import { APP_ROUTING } from './router';
 import { ErrorComponent } from './pages/error-page/error.page.component';
 import { ConsultarDominioComponent } from './pages/consultar-dominio/consultar-dominio.component';
 import {FormsModule} from '@angular/forms';
+import { ConsultarDeudaComponent } from './pages/emision-deuda/consultar-deuda.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {FormsModule} from '@angular/forms';
     ListadoInfraccionesComponent,
     NavbarComponent,
     ErrorComponent,
-    ConsultarDominioComponent
+    ConsultarDominioComponent,
+    ConsultarDeudaComponent
   ],
   imports: [
     BrowserModule,

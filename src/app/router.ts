@@ -5,12 +5,14 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { NgModule } from '@angular/core';
 import { ErrorComponent } from './pages/error-page/error.page.component';
 import { ConsultarDominioComponent } from './pages/consultar-dominio/consultar-dominio.component';
+import { ConsultarDeudaComponent } from './pages/emision-deuda/consultar-deuda.component';
 
 const appRoutes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: '/home'},
     {path: 'home', component: HomeComponent},
     {path: 'infracci', component: ListadoInfraccionesComponent},
     {path: 'dominios', component: ConsultarDominioComponent},
-    {path: '**', component: ErrorComponent}  // pathMatch: 'full' , redirectTo: '/infracci'}
+    {path: 'deuda', component: ConsultarDeudaComponent},
+    {path: '**', component: ErrorComponent}
 ];
 export const APP_ROUTING = RouterModule.forRoot(appRoutes);
