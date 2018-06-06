@@ -8,6 +8,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Codigo</th>
                 <th>Infracción</th>
                 <th>Monto Total</th>
@@ -17,6 +18,7 @@
         <tbody>
             <tr *ngFor="let infraccion of infServ.itemList">
                 <td>{{infraccion.ifrid}}</td>
+                <td>{{infraccion.ifrcodigo}}</td>
                 <td>{{infraccion.ifrds}}</td>
                 <td>$ {{(infraccion.ifrcosto*9.5)}}</td>
                 <td>$ {{((infraccion.ifrcosto*9.5)*0.6)}}</td>

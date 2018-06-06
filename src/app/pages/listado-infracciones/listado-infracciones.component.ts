@@ -22,8 +22,5 @@ export class ListadoInfraccionesComponent implements OnInit {
     } else {
       this.infServ.buscarInfraccion(infraccionSearch);
     }
-    /*while (infraccionSearch !== '') {
-      this.infServ.buscarInfraccion(infraccionSearch);
-    }*/
   }
 }
