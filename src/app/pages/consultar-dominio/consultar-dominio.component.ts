@@ -10,11 +10,24 @@ import { VehiculosService } from '../../services/vehiculos.service';
 export class ConsultarDominioComponent {
 
     public documento: string;
+    searchResult: DetalleVehiculoInterface[];
 
     constructor(public vehicServicio: VehiculosService) { }
 
     getVehiculo() {
-        this.vehicServicio.getVehiculos(this.documento);
+        return this.vehicServicio.getVehiculos(this.documento).subscribe(listadoVehic => {
+            this.searchResult = listadoVehic.items;
+    });
     }
-
 }
+
+export interface RespInterface {
+    items: DetalleVehiculoInterface[];
+  }
+
+  export interface DetalleVehiculoInterface {
+    documento: string;
+    dominio: string;
+    marca: string;
+    nombre: string;
+  }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { getQueryValue } from '@angular/core/src/view/query';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,30 +9,11 @@ import { getQueryValue } from '@angular/core/src/view/query';
 export class VehiculosService {
 
   url = 'https://sistemas.seguridad.mendoza.gov.ar/apex/vial/multasvialesinfracciones/';
-  searchResult: detalleVehiculoInterface[];
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getVehiculos(documento: string) {
-    this.httpClient.get<respInterface>(this.url + documento).subscribe(listadoVehic => {
-      this.searchResult = listadoVehic.items;
-    });
-    console.log(this.searchResult);
+  getVehiculos(documento: string): any {
+    return this.httpClient.get(this.url + documento);
+    }
   }
-}
-
-// tslint:disable-next-line:class-name
-export interface respInterface {
-  items: detalleVehiculoInterface[];
-}
-
-// tslint:disable-next-line:class-name
-export interface detalleVehiculoInterface {
-  documento: string;
-  dominio: string;
-  marca: string;
-  nombre: string;
-
-}
-// debounce

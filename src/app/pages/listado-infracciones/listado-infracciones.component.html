@@ -1,7 +1,7 @@
 <h1 style="margin-left: 10px"><strong>Infracciones - Ley 9024</strong></h1>
 <br/>
 <div style="margin-left: 10px; display: inline-block;">Buscar infracciones:</div>
-<input size="30" style="margin-left: 10px" placeholder="Comience a escribir..." [(ngModel)]="infraccionSearch" (ngModelChange)="buscarInfraccion(infraccionSearch)">
+<input size="30" style="margin-left: 10px" placeholder="Comience a escribir..." [(ngModel)]="infraccionSearch" (ngModelChange)="buscarInfracciones(infraccionSearch)">
 <br/>
 <br/>
 <div class="content">
@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let infraccion of infServ.itemList">
+            <tr *ngFor="let infraccion of itemList">
                 <td>{{infraccion.ifrid}}</td>
                 <td>{{infraccion.ifrcodigo}}</td>
                 <td>{{infraccion.ifrds}}</td>

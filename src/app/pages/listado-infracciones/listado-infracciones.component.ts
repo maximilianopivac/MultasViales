@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { InfraccionesService } from '../../services/infracciones.service';
 
 @Component({
@@ -9,18 +10,41 @@ import { InfraccionesService } from '../../services/infracciones.service';
 export class ListadoInfraccionesComponent implements OnInit {
 
   public infraccionSearch: string;
+  itemList: DetalleInfraccionesInterface[];
 
   constructor(public infServ: InfraccionesService) { }
 
   ngOnInit() {
-    this.infServ.findInfractions();
+
+    this.infServ.findInfractions().subscribe(res => {
+      this.itemList = res.items;
+    });
+
   }
 
-  buscarInfraccion(infraccionSearch) {
+  buscarInfracciones(infraccionSearch): any {
+    // let resultado: any;
+
     if (infraccionSearch === '') {
-      this.ngOnInit();
+      return this.ngOnInit();
     } else {
-      this.infServ.buscarInfraccion(infraccionSearch);
+      return this.infServ.buscarInfraccion(infraccionSearch).subscribe(infraccionList => {
+        this.itemList = infraccionList.items;
+      });
     }
   }
+
 }
+
+export interface DetalleInfraccionesInterface {
+  ifrid: number;
+  ifrcodigo: string;
+  ifrds: string;
+  ifrcosto: number;
+}
+
+export interface RespInterface {
+  next: string;
+  items: DetalleInfraccionesInterface[];
+}
+
